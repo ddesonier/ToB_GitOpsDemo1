@@ -2,8 +2,6 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  labels:
-    app.kubernetes.io/name: load-balancer-example
   name: demoapp
   namespace: demoapp
 spec:
@@ -11,12 +9,10 @@ spec:
   selector:
     matchLabels:
       app: demoapp
-      app.kubernetes.io/name: load-balancer-example
   template:
     metadata:
       labels:
         app: demoapp
-        app.kubernetes.io/name: load-balancer-example
     spec:
       containers:
         - name: demoapp
